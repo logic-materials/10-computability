@@ -85,7 +85,7 @@
 \usepackage{hyperref}
 \pagestyle{fancy}
 \fancyhead[R]{Студент(ка) Студентов(а)} % TODO введите ваше имя
-\fancyhead[L]{ИТМО MSE, Логика 2025, Дз 8}
+\fancyhead[L]{ИТМО MSE, Логика 2025, Дз 10}
 % ------------------------------------------------
 
 % Numbering
@@ -214,51 +214,17 @@
     \newpage
 
 
-    \section*{Дз 8. Исчисление предикатов}
+    \section*{Дз 10. Теория вычислимости}
 
-    Глобальный минимум: 5б.
+    Глобальный минимум: 3б.
 
-    \begin{description}
-        \item[A1-A11] Такие же, как в исчислении высказываний
-        \item[A12] $\Gamma\vdash(\forall x\ldotp A) \to A[x \coloneqq \tau]$, где
-        $\tau$ --- произвольный терм
-        \item[A13] $\Gamma\vdash A[x \coloneqq \tau] \to \exists x\ldotp A$, где
-        $\tau$ --- произвольный терм
-        \item[A14] $\Gamma\vdash(\forall x\ldotp A \to B) \to (A \to \forall x \ldotp B)$,
-        где $x \not\in \mathrm{FV}(A)$
-        \item[A15] $\Gamma\vdash(\forall x\ldotp A \to B) \to (\exists x\ldotp A) \to B$,
-        где $x \not\in \mathrm{FV}(B)$
-    \end{description}
-    \[\begin{array}{cc}
-          \infer[\text{MP}]{\Gamma\vdash B}{
-              \Gamma\vdash A
-              & \Gamma\vdash A \to B
-          } &
-          \infer[\text{Gen}]{\Gamma\vdash \forall x\ldotp A}{
-              \Gamma\vdash A
-              & x \not\in \mathrm{FV}(\Gamma)
-          } \\
-          \infer[\text{B}\forall]{
-              \Gamma\vdash A \to \forall x\ldotp B
-          }{
-              \Gamma\vdash A \to B
-              & x \not\in \mathrm{FV}(A)
-              & x \not\in \mathrm{FV}(\Gamma)
-          } &
-          \infer[\text{B}\exists]{
-              \Gamma\vdash (\exists x\ldotp A) \to B
-          }{
-              \Gamma\vdash A \to B
-              & x \not\in \mathrm{FV}(B)
-              & x \not\in \mathrm{FV}(\Gamma)
-          }
-    \end{array}\]
+    \subsection{Вычислимость}
 
-    \subsection{}
+    Локальный минимум: 2б.
 
     \subsubsection{(1б)}
 
-    $(\exists x\ldotp P(x) \lor Q(x)) \to (\exists x\ldotp P(x)) \lor (\exists x\ldotp Q(x))$
+    Покажите, что для всякой вычислимой функции $f$ есть такая вычислимая $g$, что область определения $g$ совпадает с областью значений $f$ и, если $f(x)$ определено, $f(g(f(x))) = f(x)$.
 
     \begin{proof}
         TODO % todo
@@ -266,7 +232,7 @@
 
     \subsubsection{(1б)}
 
-    $(P \to \forall x Q(x))\to\forall x(P \to Q(x))$
+    Приведите множество натуральных чисел, к которому $m$-сводимо любое перечислимое множество натуральных чисел.
 
     \begin{proof}
         TODO % todo
@@ -274,39 +240,23 @@
 
     \subsubsection{(1б)}
 
-    $(\forall x~y\ldotp P(x) \to P(y)) \to (\exists x\ldotp P(x)) \to (\forall y\ldotp P(y))$
+    Существует ли множество натуральных чисел, к которому m-сводимо любое другое множество натуральных чисел?
+
+    Подсказка: подумайте про мощности множеств.
 
     \begin{proof}
         TODO % todo
     \end{proof}
 
-    \subsubsection{(1б)}
+    \subsection{Модели вычислений}
 
-    $(\exists x\ldotp P(x) \to Q(x)) \to (\forall x\ldotp P(x)) \to (\exists x\ldotp Q(x))$
-
-    \begin{proof}
-        TODO % todo
-    \end{proof}
+    Локальный минимум: 1б.
 
     \subsubsection{(1б)}
 
-    $(\forall x \ldotp \neg P(x)) \leftrightarrow \neg (\exists x \ldotp P(x))$
+    Постройте машину Тьюринга, разворачивающую последовательность символов $\Sigma = \{0, 1\}$.
 
-    \begin{proof}
-        TODO % todo
-    \end{proof}
-
-    \subsubsection{(1б)}
-
-    $(\exists x \ldotp \neg P(x)) \leftrightarrow \neg (\forall x \ldotp P(x))$
-
-    \begin{proof}
-        TODO % todo
-    \end{proof}
-
-    \subsubsection{(1б)}
-
-    $(\exists y\ldotp \neg P(x)) \to \exists x\ldotp \forall y\ldotp P(x) \to P(y)$
+    Приложите ваше решение в виде ссылки на \url{https://turingmachinesimulator.com/}.
 
     \begin{proof}
         TODO % todo
